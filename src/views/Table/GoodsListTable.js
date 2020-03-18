@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Table, Avatar } from 'table'
+import { Table, Avatar } from 'antd'
+import { fetchGoodsList } from './services'
+import { useService } from './hooks'
 
 const columns = [
   {
@@ -37,10 +39,34 @@ const columns = [
   }
 ];
 
-export default function GoodsListTable () {
+const GoodsListTable = () => {
+  const [pageSize, setPageSize] = useState(5)
+  const [pageNo, setPageNo] = useState(1)
+  const { loading = false, error, response = {} } = useService(fetchGoodsList, {
+    pageSize,
+    pageNo
+  })
+  console.log(response);
+
+  const { list = [], total } = response || {}
   return (
     <div>
-      table
+      <Table
+        loading={loading}
+        dataSource={list}
+        columns={columns}
+        bordered
+        pagination={{
+          pageSize,
+          current: pageNo,
+          total,
+          onChange: (pageNo, pageSize) => {
+            setPageNo(pageNo);
+            setPageSize(pageSize);
+          }
+        }}
+      />
     </div>
   )
 }
+export default GoodsListTable
