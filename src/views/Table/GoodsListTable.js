@@ -48,7 +48,7 @@ const GoodsListTable = () => {
   })
   console.log(response);
 
-  const { list = [], total } = response || {}
+  const { list = [], total } = !error ? response || {} : {}
   return (
     <div>
       <Table

@@ -17,8 +17,6 @@ export const fetchGoodsList = () => {
   })
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log(goodsList);
-
       resolve(goodsList)
     }, Mock.Random.integer(500, 1000));
   })
