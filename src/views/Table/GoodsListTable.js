@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table, Avatar } from 'antd'
 import { fetchGoodsList } from './services'
-import { useService } from './hooks'
+import { useService } from '../../hooks'
 
 const columns = [
   {

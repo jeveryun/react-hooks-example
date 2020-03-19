@@ -1,0 +1,77 @@
+.container {
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+}
+
+.prize-button {
+  top: 200px;
+  left: 200px;
+  cursor: pointer;
+  outline: none;
+}
+
+.prize-list {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.prize-item {
+  position: absolute;
+  font-size: 18px;
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+  line-height: 200px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+.prize-item-active,
+.prize-item:hover {
+  border: 2px solid red;
+}
+
+.prize-item.left-top {
+  top: 0;
+  left: 0;
+}
+
+.prize-item.top-middle {
+  top: 0;
+  left: 200px;
+}
+
+.prize-item.top-right {
+  top: 0;
+  right: 0;
+}
+
+.prize-item.right-middle {
+  top: 200px;
+  right: 0;
+}
+
+.prize-item.right-bottom {
+  bottom: 0;
+  right: 0;
+}
+
+.prize-item.bottom-middle {
+  bottom: 0;
+  left: 200px;
+}
+
+.prize-item.left-bottom {
+  left: 0;
+  bottom: 0;
+}
+
+.prize-item.left-middle {
+  left: 0;
+  top: 200px;
+}
